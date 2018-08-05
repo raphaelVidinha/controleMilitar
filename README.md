@@ -16,3 +16,5 @@ O campo 'serviço militar obrigatório' deve ser boleano, e caso seja verdadeiro
 O ideal seria que a criação das tabelas utilizasse os recursos do laravel, assim como as validações no lado backend.
 
 #
+Foram utilizadas nesta aplicação:
+Api rest com laravel 5.4, para consumir a api, angular 2+ e para a estilização bootstrap3.
