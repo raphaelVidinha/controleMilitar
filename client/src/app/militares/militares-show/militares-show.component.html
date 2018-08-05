@@ -1,0 +1,26 @@
+
+<div class="panel panel-default">
+    <div class="panel-heading"><h4>{{ militar.nome }}</h4></div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Data de Nascimento: </b>{{ militar.data_nascimento }}</li>
+                    <li class="list-group-item"><b>Patente: </b>{{ militar.patentes }}</li>
+                    <li class="list-group-item"><b>Serviço Militar Obrigatório: </b>{{ militar.servico_militar_obrigatorio == 1 ? 'Sim' : 'Não' }}</li>
+                    <li class="list-group-item"><b>Identidade: </b>{{ militar.identidade }}</li>
+                  </ul>
+          
+                  <hr>
+          
+                  <div class="btn-group" role="group">
+                      <a [routerLink]="['/militares/' + militar.id + '/edit']" class="btn btn-xs btn-primary">editar</a>
+                      <a [routerLink]="" (click)="delete(militar.id)" class="btn btn-xs btn-danger">deletar</a>
+                      <a [routerLink]="['/militares']" class="btn btn-xs btn-info">voltar</a>
+                    </div>
+          
+            </div>
+          </div>
+    </div>
+  </div>
+

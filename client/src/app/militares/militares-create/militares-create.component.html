@@ -1,0 +1,72 @@
+
+<div class="panel panel-default">
+    <div class="panel-heading">Novo Usuário</div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-12">
+            
+            <a [routerLink]="['/militares']" class="pull-right btn btn-info">voltar</a>
+            
+        </div>
+      </div>
+      <br>
+      <div class="row" *ngIf="error">
+        <div class="col-md-12">
+          <div class="alert alert-danger" role="alert">
+            {{ error }}
+          </div>
+        </div>
+      </div>
+        <div class="row">
+            <div class="col-md-12">
+              <form (submit)="save()">
+                  <div class="form-group">
+                    <label for="name">nome</label>
+                    <input type="text" name="nome" class="form-control" id="name" [(ngModel)]="militar.nome" placeholder="Nome">
+                  </div>
+                  <div class="form-group">
+                      <label for="dataNascimento">data de nascimento</label>
+                      <input type="date" name="data_nascimento" class="form-control" id="dataNascimento" [(ngModel)]="militar.data_nascimento" placeholder="Data de nascimento">
+                  </div>
+
+                  <div class="radio-inline">
+                      <label for="">Serviço militar obrigatório</label>
+                      <br>
+                        <label class="radio-inline">
+                            <input type="radio" name="servico_militar_obrigatorio_true" (click)="hidePatentes()" id="servicoMilitarObrigatorioTrue" value="1" [(ngModel)]="militar.servico_militar_obrigatorio"> sim
+                          </label>
+                          <label class="radio-inline">
+                            <input type="radio" name="servico_militar_obrigatorio_false" (click)="showPatentes()" id="servicoMilitarObrigatorioFalse" value="0" [(ngModel)]="militar.servico_militar_obrigatorio"> não
+                          </label>
+                    </div>
+          
+                    <br><br>
+        
+                  <div class="form-group">
+                    <label for="">
+                      Patente
+                    </label>
+                      <select name="patentes" class="form-control" id="patentes" [(ngModel)]="militar.patentes">
+                          <option value="Soldado">Soldado</option>
+                          <option value="Cabo">Cabo</option>
+                          <option value="Sargento">Sargento</option>
+                          <option value="Subtenente" class="mostraPatente" style="display: none;">Subtenente</option>
+                          <option value="Tenente" class="mostraPatente" style="display: none;">Tenente</option>
+                          <option value="Capitão" class="mostraPatente" style="display: none;">Capitão</option>
+                          <option value="General" class="mostraPatente" style="display: none;">General</option>
+                        </select>
+                  </div>
+        
+                  <div class="form-group">
+                      <label for="identidade">identidade</label>
+                      <input type="text" name="identidade" class="form-control" id="identidade" [(ngModel)]="militar.identidade" placeholder="Identidade">
+                    </div>
+        
+                  <br><br>
+        
+                  <button type="submit" class="btn btn-success">Salvar</button>
+                </form>
+            </div>
+          </div>
+    </div>
+  </div>

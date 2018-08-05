@@ -1,0 +1,37 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Militares</div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12">
+        <a [routerLink]="['/militares/create']" class="pull-right btn btn-success">Novo</a>
+    </div>
+    <hr>
+  </div>
+      <table class="table table-bordered table-hover text-center">
+        <thead class="thead-dark">
+          <tr>
+            <td>#</td>
+            <td>Nome</td>
+            <td>Nascimento</td>
+            <td>Patente</td>
+            <td>Serviço Militar Obrigatório</td>
+            <td>Identidade</td>
+            <td>Ações</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let militar of militares">
+            <td>{{ militar.id }}</td>
+            <td>{{ militar.nome }}</td>
+            <td>{{ militar.data_nascimento | date:"dd/MM/yyyy" }}</td>
+            <td>{{ militar.patentes }}</td>
+            <td>{{ militar.servico_militar_obrigatorio == 1 ? "Sim" : "Não" }}</td>
+            <td>{{ militar.identidade }}</td>
+            <td>
+              <a [routerLink]="['/militares/' + militar.id]" class="btn btn-info btn-xs">ver</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
